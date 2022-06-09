@@ -15,8 +15,7 @@ export class HideAfterDirective implements OnInit {
 
   @Input('hideAfterThen')
   placeholder: TemplateRef<any> | null = null;
-  // placeholder = TemplateRef<any> | null = null;
-
+  
   constructor(
     private viewContainerRef: ViewContainerRef,
     private template: TemplateRef<any>
@@ -26,8 +25,8 @@ export class HideAfterDirective implements OnInit {
     this.viewContainerRef.createEmbeddedView(this.template);
     setTimeout(() => {
       this.viewContainerRef.clear();
-      if (this.placeholder){
-        this.viewContainerRef.createEmbeddedView(this.placeholder)
+      if (this.placeholder) {
+        this.viewContainerRef.createEmbeddedView(this.placeholder);
       }
     }, this.delay);
   }
