@@ -329,12 +329,12 @@
   <main>
     <h1>Changing Content</h1>
     <section *hideAfter="5000; then placeholder" class="banner1 primary">
-      <h3>Initial Content</h3>
+      <h3>Initial</h3>
       <p>Will disappear in 5 seconds</p>
     </section>
     <ng-template #placeholder>
       <section class="banner2 placeholder">
-        <h3>Ending Content</h3>
+        <h3>After</h3>
         <p>Appeared after 5 seconds</p>
       </section>
     </ng-template>
