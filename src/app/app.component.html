@@ -309,7 +309,7 @@
     padding: 10px;
   }
   .banner2 {
-    border: 10px solid rgb(221,0,49);
+    border: 10px solid rgb(221, 0, 49);
     border-radius: 20px;
     padding: 10px;
   }
@@ -328,14 +328,24 @@
 <div class="content" role="main">
   <main>
     <h1>Changing Content</h1>
-    <section *hideAfter="5000; then placeholder" class="banner1 primary">
-      <h3>Initial</h3>
-      <p>Will disappear in 5 seconds</p>
+    <section
+      *hideAfter="
+        7000 as time;
+        then placeholder;
+        let counter = counter;
+        let default
+      "
+      class="banner1 primary"
+    >
+      <h3>Content 1</h3>
+      <p>Will disappear in {{ default }} seconds.</p>
+      <p>It disappears in {{ counter }} seconds.</p>
     </section>
-    <ng-template #placeholder>
+    <ng-template #placeholder let-hiddenAfter="hideAfter" let-myDefault>
       <section class="banner2 placeholder">
-        <h3>After</h3>
-        <p>Appeared after 5 seconds</p>
+        <h3>Content 2</h3>
+        <p>Content 1 was visible for {{ hiddenAfter }} seconds.</p>
+        <p>myDefault: {{ myDefault }}</p>
       </section>
     </ng-template>
   </main>
