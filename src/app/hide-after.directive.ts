@@ -5,6 +5,8 @@ import {
   TemplateRef,
   ViewContainerRef,
 } from '@angular/core';
+import { VERSION } from '@angular/compiler';
+
 
 class HideAfterContext {
   public get $implicit() {
@@ -18,6 +20,7 @@ class HideAfterContext {
   selector: '[hideAfter]',
 })
 export class HideAfterDirective implements OnInit {
+  title = `Angular ${VERSION.full}`;
   @Input('hideAfter')
   set delay(value: number | null) {
     this._delay = value ?? 0;
