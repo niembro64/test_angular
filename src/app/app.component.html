@@ -325,6 +325,8 @@
   <div class="spacer"></div>
 </div>
 
+<!-- //////////////////////////////// -->
+
 <div class="content" role="main">
   <main>
     <h1>Changing Content</h1>
@@ -352,25 +354,25 @@
     <!-- //////////////////////////////// -->
 
     <section
-    *hideAfter="
-      4000 as time;
-      then placeholder;
-      let counter = counter;
-      let default
-    "
-    class="banner1 primary"
-  >
-    <h3>Content 1</h3>
-    <p>Will disappear in {{ default }} seconds.</p>
-    <p>It disappears in {{ counter }} seconds.</p>
-  </section>
-  <ng-template #placeholder let-hiddenAfter="hideAfter" let-myDefault>
-    <section class="banner2 placeholder">
-      <h3>Content 2</h3>
-      <p>Content 1 was visible for {{ hiddenAfter }} seconds.</p>
-      <p>myDefault: {{ myDefault }}</p>
+      *hideAfter="
+        4000 as time;
+        then placeholder;
+        let counter = counter;
+        let default
+      "
+      class="banner1 primary"
+    >
+      <h3>Content 1</h3>
+      <p>Will disappear in {{ default }} seconds.</p>
+      <p>It disappears in {{ counter }} seconds.</p>
     </section>
-  </ng-template>
+    <ng-template #placeholder let-hiddenAfter="hideAfter" let-myDefault>
+      <section class="banner2 placeholder">
+        <h3>Content 2</h3>
+        <p>Content 1 was visible for {{ hiddenAfter }} seconds.</p>
+        <p>myDefault: {{ myDefault }}</p>
+      </section>
+    </ng-template>
   </main>
 </div>
 
